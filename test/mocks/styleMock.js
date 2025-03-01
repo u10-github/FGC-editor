@@ -1,0 +1,2 @@
+// CSS ファイルのモック
+module.exports = {}; 

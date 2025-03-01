@@ -1,0 +1,26 @@
+{
+  "name": "fgc-editor",
+  "version": "1.0.0",
+  "description": "格闘ゲームのコマンド入力と変換を支援するツールです。数字表記（236P）と矢印表記（↓↘→P）の相互変換、コマンド入力の補助などの機能を提供します。",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

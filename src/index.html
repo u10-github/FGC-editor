@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>236↓↘→P - 格闘ゲームコマンドエディタ</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976D2">
+  <link rel="icon" href="icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content container">
+      <h1 class="app-title">236↓↘→P</h1>
+      <div class="header-subtitle">格闘ゲームコマンドエディタ</div>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <div class="editor-container">
+      <div class="form-group">
+        <label for="command-input" class="form-label">コマンド入力</label>
+        <div class="command-display-container">
+          <textarea id="command-input" class="command-input-field" placeholder="例：↓↘→+P 波動拳 または 236P"></textarea>
+          <button id="copy-button" class="action-button">
+            <i class="material-icons">content_copy</i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">コマンド入力補助</label>
+        <div class="command-input-container">
+          <div class="button-grid">
+            <button type="button" class="command-button" data-command="↖">↖</button>
+            <button type="button" class="command-button" data-command="↑">↑</button>
+            <button type="button" class="command-button" data-command="↗">↗</button>
+            <button type="button" class="command-button" data-command="←">←</button>
+            <button type="button" class="command-button" data-command="N">N</button>
+            <button type="button" class="command-button" data-command="→">→</button>
+            <button type="button" class="command-button" data-command="↙">↙</button>
+            <button type="button" class="command-button" data-command="↓">↓</button>
+            <button type="button" class="command-button" data-command="↘">↘</button>
+          </div>
+          
+          <div class="action-buttons">
+            <button type="button" id="convert-notation" class="conversion-button">矢印⇔数字変換</button>
+            <button type="button" id="clear-input" class="secondary-button">クリア</button>
+          </div>
+          
+          <div class="action-buttons">
+            <button type="button" id="convert-to-arrows" class="conversion-button">数字→矢印変換</button>
+            <button type="button" id="convert-to-numbers" class="conversion-button">矢印→数字変換</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-section">
+        <h3 class="section-title">使い方</h3>
+        <ul class="info-list">
+          <li>ボタンを押して矢印や記号を入力できます</li>
+          <li>「矢印⇔数字変換」ボタンでボタン表記と入力内容を切り替えられます</li>
+          <li>「数字→矢印変換」で数字表記（236P）を矢印表記（↓↘→P）に変換できます</li>
+          <li>「矢印→数字変換」で矢印表記を数字表記に変換できます</li>
+          <li>コピーボタンでコマンドをクリップボードにコピーできます</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 236↓↘→P - 格闘ゲームコマンドエディタ</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Service Workerの登録
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered successfully:', registration);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html> 
