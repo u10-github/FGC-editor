@@ -85,7 +85,7 @@ describe('コマンド表記変換機能', () => {
   test('数字から矢印への変換', () => {
     expect(converter.convertToArrows('236')).toBe('↓↘→');
     expect(converter.convertToArrows('214')).toBe('↓↙←');
-    expect(converter.convertToArrows('6321')).toBe('→↓↘↙');
+    expect(converter.convertToArrows('6321')).toBe('→↘↓↙');
     expect(converter.convertToArrows('5')).toBe('N');
     expect(converter.convertToArrows('AB123')).toBe('AB↙↓↘');
   });
@@ -93,7 +93,7 @@ describe('コマンド表記変換機能', () => {
   test('矢印から数字への変換', () => {
     expect(converter.convertToNumbers('↓↘→')).toBe('236');
     expect(converter.convertToNumbers('↓↙←')).toBe('214');
-    expect(converter.convertToNumbers('→↓↘↙')).toBe('6321');
+    expect(converter.convertToNumbers('→↘↓↙')).toBe('6321');
     expect(converter.convertToNumbers('N')).toBe('5');
     expect(converter.convertToNumbers('ABC↓↘→')).toBe('ABC236');
   });
